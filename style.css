@@ -1,0 +1,438 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url(Montserrat-VariableFont_wght.ttf);
+}
+
+:root{
+    --roxo_clarrisimo: #dedeea;
+    --roxo_medio: #BCB9D8;
+    --roxo: #8488B5;
+    --roxo_escuro: #61678B;
+    --azul_claro: #98BFD0 ;
+    --azul_escuro: #78ACC1;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: var(--roxo_clarrisimo);
+    color: var(--roxo_escuro);
+    font-family: 'montserrat';
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Header */
+
+h1{
+    font-size: 24px;
+}
+
+.nav_bar{
+    height: 100px;
+    background-color: var(--roxo_escuro);
+    color: white;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position:fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav_links a{
+    margin: 0 10px;
+    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+}
+
+.nav_links a:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background-color: var(--roxo);
+
+    bottom: -5px;
+    left: 0px;
+
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.2s ease-out;
+}
+
+.nav_links a:hover:after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.secoes{
+    margin: 0 100px;
+    padding-top: 15vh;
+}
+
+/* Sobre mim */
+#sobreMim{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100vh;
+    padding: 100px;
+}
+
+#sobreMim section{
+    width: 600px;
+}
+
+.subtitulos{
+    padding: 0  0 30px;
+}
+
+.nome_foto{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sobremim_foto{
+    width: 400px;
+    height: 400px;
+
+    opacity: 0;
+    transform-origin: 0 0;
+    transform: translateX(-100px);
+
+    transition-property: transform, opacity;
+    transition-duration: .7s;
+    transition-timing-function: ease;
+}
+
+.foto_wrapper{
+    display: block;
+    width: 400px;
+    height: 400px;
+    background: url("imagens/selfie.jpg");
+}
+
+.foto_wrapper:hover .sobremim_foto{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.texto{
+    padding-top: 80px;
+}
+
+.texto p{
+    padding: 10px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+.dica{
+    margin-top: 50px;
+}
+
+/* Habilidades */
+
+.linguagens{
+    display: grid;
+    grid-template-columns: 200px repeat(2, 300px) 200px;
+    grid-row-gap: 100px;
+    justify-content: center;
+
+
+    background-color: white;
+    padding: 65px 0;
+
+    height: 75vh;
+}
+
+.mensagem_html{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.mensagem_javascript{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.linguagens-imagens{
+    height: 100px;
+    margin: 0 30px;
+}
+
+.barlvl{
+    padding: 5px 0;
+    display: block;
+    margin-top: 15px;
+}
+
+.div_linguagens{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.classificacao{
+    margin-top: 25px;
+}
+
+.checked{
+    color: orange;
+}
+
+.texto_linguagens{
+    color: black;
+}
+
+.texto_linguagens{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu_item{
+    width: 200px;
+    margin: 5px 0;
+
+    transform-origin: 0 0;
+    transform: translateX(-100px);
+    opacity: 0;
+
+    transition-property: transform, opacity;
+    transition-duration: .7s;
+    transition-timing-function: ease;
+}
+
+.menu_item::before{
+    content: '';
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    margin-top: 7px;
+    margin-right: 5px;
+    float: left;
+    background-color: var(--azul_claro);
+}
+
+.div_linguagens:is(:hover, :focus) + .texto_linguagens .menu_item{
+    transform: translateX(0);
+    opacity: 100%;
+}
+
+.menu_item:nth-of-type(1){
+    transition-delay: 0ms;
+}
+
+.menu_item:nth-of-type(2){
+    transition-delay: 50ms;
+}
+
+.menu_item:nth-of-type(3){
+    transition-delay: 100ms;
+}
+
+.menu_item:nth-of-type(4){
+    transition-delay: 150ms;
+}
+
+/* Projetos */
+
+.area_projetos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.area_projetos > div{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 520px;
+    padding: 30px;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.fotos_projetos{
+    width: 350px;
+    height: 300px;
+    margin: 20px 0;
+    object-fit: cover;
+}
+
+.text_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.links_projetos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.links_projetos a{
+    padding: 5px;
+    background-color: var(--azul_escuro);
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.links_projetos a:nth-child(2){
+    margin-left: 10px;
+}
+
+.decodificador img{
+    object-fit: contain;
+    background-color: #43523D;
+}
+
+.dashboard img{
+    object-fit: contain;
+}
+
+/* Formação */
+
+.sec_dupla{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 100px;
+}
+
+
+.sec_dupla > div{
+    width: 600px;
+}
+
+.formacao div{
+    margin-bottom: 30px;
+}
+
+/* Idiomas */
+
+#idiomas{
+    padding-right: 200px;
+}
+
+.nome_idiomas::before{
+    content: '';
+    height: 20px;
+    width: 5px;
+    float: left;
+    background-color: var(--azul_claro);
+}
+
+.nome_idiomas::after{
+    content: '';
+    height: 20px;
+    width: 5px;
+    float: left;
+    margin-right: 5px;
+    background-color: var(--roxo_escuro);
+}
+
+.fluencia{
+    display: inline-block;
+    margin: 5px 0 30px;
+    padding: 5px;
+    color: white;
+}
+
+.ingles{
+    background-color: var(--azul_escuro);
+    width: 75%;
+}
+
+.japones{
+    background-color: var(--azul_escuro);
+    width: 25%;
+}
+
+.frances{
+    background-color: var(--azul_escuro);
+    width: 20%;
+}
+
+/* Mensagem */
+
+.mensagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0 100px 50px;
+}
+
+.coracao{
+    position: absolute;
+    margin-left: 5px;
+}
+
+@keyframes heartbeat {
+    0% {
+      transform: scale( 1 );    
+    }
+    20% {
+      transform: scale( 1.25 ) 
+        translateX(5%) 
+        translateY(5%);
+    } 
+    40% {
+      transform: scale( 1.5 ) 
+        translateX(9%) 
+        translateY(10%);
+    }
+}
+
+.coracao:hover{
+    animation: heartbeat 1s infinite;
+    color: red;
+}
+
+/* Rodapé */
+
+.rodape{
+    background-color: var(--roxo_escuro);
+
+    color: white;
+
+    display: flex;
+    padding: 20px 100px;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.social{
+    display: flex;
+    flex-direction: column;
+}
