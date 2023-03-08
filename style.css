@@ -12,7 +12,6 @@
 :root{
     --roxo_clarrisimo: #dedeea;
     --roxo_medio: #BCB9D8;
-    --roxo: #8488B5;
     --roxo_escuro: #61678B;
     --azul_claro: #98BFD0 ;
     --azul_escuro: #78ACC1;
@@ -41,7 +40,7 @@ h1{
 }
 
 .nav_bar{
-    height: 100px;
+    height: 80px;
     background-color: var(--roxo_escuro);
     color: white;
     padding: 0 50px;
@@ -92,8 +91,6 @@ h1{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    height: 100vh;
     padding: 100px;
 }
 
@@ -152,6 +149,11 @@ h1{
 }
 
 /* Habilidades */
+
+.container{
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.15);
+}
 
 .linguagens{
     display: grid;
